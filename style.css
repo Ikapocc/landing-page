@@ -219,7 +219,7 @@ ul {
 }
 
 .carousel{
-  text-align: center;
+  text-align: -webkit-center;
 }
 
 .center{
@@ -245,6 +245,35 @@ form{
   font-size: var(--font-size-little);
   color: var(--Dark-Grayish-Blue);
   margin-left: auto;
+}
+
+.slider {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+.slider > * {
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--Vary-Light-Gray);
+  width: 200px;
+}
+
+.slider img{
+  width: 5rem;
+  padding-block: 3rem 1.5rem;
+}
+
+.slider h3{
+  padding-bottom: 1.5rem;
+}
+
+.parscarousel{
+  font-size: var(--font-size-class);
+  color: var(--Dark-Grayish-Blue);
+  margin-inline: auto;
+  line-height: 1.8;
 }
 
 .cta{
