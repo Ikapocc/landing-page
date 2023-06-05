@@ -249,15 +249,13 @@ form{
 
 .slider {
   display: flex;
-  gap: 2rem;
-  justify-content: space-around;
+  gap: 1rem;
 }
 
 .slider > * {
   width: 100%;
   flex: 0 0 auto;
-  background-color: var(--Vary-Light-Gray);
-  width: 200px;
+  width: 500px;
 }
 
 .slider img{
@@ -267,6 +265,11 @@ form{
 
 .slider h3{
   padding-bottom: 1.5rem;
+}
+
+.carouselcontent{
+  padding: 2rem 3rem;
+  background-color: var(--Vary-Light-Gray);
 }
 
 .parscarousel{
