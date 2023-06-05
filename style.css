@@ -9,7 +9,7 @@
 
     --font-size-toobig: 48px;
     --font-size-big: 40px;
-    --font-size-medium: 32px;
+    --font-size-medium: 38px;
     --font-size-def: 16px;
     --font-size-class: 15px;
     --font-size-mid: 14px;
@@ -94,10 +94,6 @@ body{
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-section{
-  padding-block: 6rem;
-}
-
 .heads{
   margin-top: 50px;
 }
@@ -156,12 +152,12 @@ h1, h2, .footerhead{
 }
 
 h1 {
-  font-size: var(--font-size-toobig);
   color: var(--Dark-Blue);
 }
 
 h2{
   font-size: var(--font-size-big);
+  font-weight: bold;
   color: var(--Dark-Blue);
 }
 
@@ -181,17 +177,18 @@ ul {
 .innerpar{
   font-size: var(--font-size-class);
   color: var(--Dark-Grayish-Blue);
+  line-height: 1.6;
 }
 
 .innerparsdiv{
-  padding-block: 1rem 3rem;
+  padding-block: .8rem 2rem;
   align-items: center;
 }
 
 .pars{
   font-size: var(--font-size-class);
   color: var(--Dark-Grayish-Blue);
-  max-width: min(650px, 60%);
+  line-height: 1.8;
 }
 
 .foot{
@@ -238,6 +235,16 @@ input{
   border-radius: 30px;
   padding-block: .35rem;
   padding-inline: 1.75rem;
+}
+
+form{
+  margin-left: auto;
+}
+
+.copyright{
+  font-size: var(--font-size-little);
+  color: var(--Dark-Grayish-Blue);
+  margin-left: auto;
 }
 
 .cta{
@@ -322,6 +329,18 @@ input{
 }
 
 @media (min-width: 650px){
+  section{
+    padding-block: 6rem;
+  }
+
+  h1 {
+    font-size: var(--font-size-toobig);
+  }
+
+  .pars{
+    max-width: min(650px, 60%);
+  }
+
   .columns{
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
@@ -355,6 +374,19 @@ input{
 }
 
 @media (max-width: 650px){
+  .flows{
+    text-align: center;
+  }
+
+  h1{
+    font-size: var(--font-size-medium);
+  }
+
+  h2{
+    --font-size-custom : 30px;
+    font-size: var(--font-size-custom);
+  }
+
   .innerpar{
     text-align: left;
   }
@@ -388,6 +420,15 @@ input{
     display: none;
   }
 
+  .cta{
+    text-align: center;
+    padding-block: 2.5rem;
+  }
+
+  .footerhead{
+    font-size: var(--font-size-medium);
+  }
+
   footer{
     display: grid;
   }
@@ -395,6 +436,22 @@ input{
   .socials li{
     min-width: 20%;
     margin-inline: auto;
+  }
+
+  .front-wrapper{
+    display: grid;
+    grid-template-areas: 
+      "images"
+      "front_text"
+    ;
+  }
+
+  .front-wrapper-images{
+    grid-area: images;
+  }
+
+  .front-wrapper-front_text{
+    grid-area: front_text;
   }
 
   .columns-wrapper{
