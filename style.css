@@ -135,6 +135,7 @@ section{
 .container{
   width: min(1100px , 100%);
   margin-inline: auto;
+  padding: 1.5rem;
 }
 
 .columns{
@@ -184,6 +185,7 @@ ul {
 
 .innerparsdiv{
   padding-block: 1rem 3rem;
+  align-items: center;
 }
 
 .pars{
@@ -255,6 +257,32 @@ input{
   background-position: -4rem -2rem, 70rem -42rem;
 }
 
+.numbers{
+  counter-reset: count;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.numbers li{
+  counter-increment: count;
+}
+
+.numbers div::before{
+  content: "0" counter(count);
+  background-color: var(--Bright-Red);
+  color: var(--Vary-Light-Gray);
+  font-weight: bold;
+  padding-block: .5rem;
+  padding-inline: 1.5rem;
+  border-radius: 100vw;
+}
+
+.numbers div{
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 1.5rem;
+}
+
 .columns-wrapper-nav{
   columns: 2;
   gap: min(15vw, 4rem);
@@ -319,10 +347,14 @@ input{
   .socials li{
     min-width: 9.5%;
   }
+
+  .numbers p{
+    grid-column: 2/-1;
+    padding-block: 1rem;
+  }
 }
 
 @media (max-width: 650px){
-
   .innerpar{
     text-align: left;
   }
@@ -390,5 +422,10 @@ input{
     flex-direction: column-reverse;
     gap: 2.5rem;
     grid-area: social;
+  }
+
+  .numbers p{
+    grid-column: 1/-1;
+    padding-block: 1rem;
   }
 }
