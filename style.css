@@ -430,7 +430,7 @@ form{
   .middle{
     display: none;
     position: fixed;
-    inset: 8rem var(--font-size-min) auto;
+    inset: 7rem var(--font-size-min) auto;
     padding-block: 2rem;
     background-color: var(--Very-Pale-Red);
     border-radius: 5px;

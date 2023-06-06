@@ -5,16 +5,20 @@ const cerrado = document.querySelector(".close")
 
 navs.addEventListener('click', () => {
     primaryNav.hasAttribute('data-visible');
+
     
     if (!primaryNav.toggleAttribute("data-visible")) {
         hambs.classList.add("watch")
         cerrado.classList.remove("watch")
         cerrado.classList.add("close")
+        primaryNav.style.display = "none"
+  
     }else{
         cerrado.classList.remove("close")
         cerrado.classList.add("watch")
         hambs.classList.remove("watch")
         hambs.classList.add("close")
+        primaryNav.style.display = "block"
     }
 })
 
