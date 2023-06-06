@@ -253,7 +253,6 @@ form{
 }
 
 .slider > * {
-  width: 100%;
   flex: 0 0 auto;
   width: 500px;
 }
@@ -516,5 +515,38 @@ form{
   .numbers p{
     grid-column: 1/-1;
     padding-block: 1rem;
+  }
+
+  .slider > * {
+    width: 100%;
+  }
+
+  .a11y-slider-dots{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+
+  .a11y-slider-dots li button.active{
+    background: var(--Bright-Red);
+  }
+
+  .a11y-slider-dots li {
+    display: block;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 1px;
+    color: blue;
+  }
+
+  .a11y-slider-dots li button {
+    display: block;
+    font-size: 0;
+    text-indent: -9999px;
+    border: var(--Bright-Red) 1px solid!important;
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
   }
 }
