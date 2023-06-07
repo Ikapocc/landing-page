@@ -1,5 +1,6 @@
 :root{
     --Bright-Red: hsl(12, 88%, 59%);
+    --Bright-Red-Hover: hsl(12, 85%, 70%);
     --Dark-Blue: hsl(228, 39%, 23%);
 
     --Dark-Grayish-Blue: hsl(227, 12%, 61%);
@@ -94,8 +95,28 @@ body{
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
+/*Container and columns*/
+
+.container{
+  width: min(1100px , 100%);
+  margin-inline: auto;
+  padding: 1.5rem;
+}
+
+.columns{
+   display: grid;
+}
+
+/*Header classes*/
+
 .heads{
   margin-top: 50px;
+}
+
+.container-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .close{
@@ -104,12 +125,6 @@ body{
 
 .watch{
   display: block;
-}
-
-.container-flex{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .hidden{
@@ -124,23 +139,172 @@ body{
   border: 0;
 }
 
+.lista a {
+  font-size: var(--font-size-min);
+  color: var(--Very-Dark-Blue);
+}
+
+.lista a:hover{
+  color: var(--Dark-Grayish-Blue);
+}
+
+/*Button classes*/
+
+.btn{
+  background-color: var(--Bright-Red);
+  color: var(--Vary-Light-Gray);
+  border: none;
+  border-radius: 30px;
+  padding-block: .6rem;
+  padding-inline: 1.5rem;
+  font-size: var(--font-size-min);
+  cursor: pointer;
+}
+
+.btn[data-type="inverted"]{
+  color: var(--Bright-Red);
+  background-color: var(--Vary-Light-Gray);
+}
+
+.btn:not([data-type="inverted"]):hover{
+  background-color: var(--Bright-Red-Hover);
+}
+
+.btn[data-type="inverted"]:hover{
+  background-color: var(--Vary-Light-Gray);
+}
+
+/*Main part classes*/
+
+.pars{
+  font-size: var(--font-size-class);
+  color: var(--Dark-Grayish-Blue);
+  line-height: 1.8;
+}
+
+.flows :not(:first-child){
+  margin-block: 2rem 1rem;
+}
+
+.tablet-imgs{
+
+}
+
+/*Number list*/
+
+.innerpar{
+  font-size: var(--font-size-class);
+  color: var(--Dark-Grayish-Blue);
+  line-height: 1.6;
+}
+
+.innerparsdiv{
+  padding-block: .8rem 2rem;
+  align-items: center;
+}
+
+.numbers{
+  counter-reset: count;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.numbers li{
+  counter-increment: count;
+}
+
+.numbers div::before{
+  content: "0" counter(count);
+  background-color: var(--Bright-Red);
+  color: var(--Vary-Light-Gray);
+  font-weight: bold;
+  padding-block: .5rem;
+  padding-inline: 1.5rem;
+  border-radius: 100vw;
+}
+
+.numbers div{
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 1.5rem;
+}
+
+/*Carousel*/
+
+.carousel{
+  text-align: -webkit-center;
+}
+
 .carousel, footer{
   padding-block: 3rem;
 }
 
-.container{
-  width: min(1100px , 100%);
+.carouselcontent{
+  padding: 2rem 3rem;
+  background-color: var(--Vary-Light-Gray);
+}
+
+.parscarousel{
+  font-size: var(--font-size-class);
+  color: var(--Dark-Grayish-Blue);
   margin-inline: auto;
-  padding: 1.5rem;
+  line-height: 1.8;
 }
 
-.columns{
-   display: grid;
+.slider {
+  display: flex;
+  gap: 1rem;
 }
 
-.lista a {
-  font-size: var(--font-size-min);
-  color: var(--Very-Dark-Blue);
+.slider > * {
+  flex: 0 0 auto;
+  width: 500px;
+}
+
+.slider img{
+  width: 5rem;
+  padding-block: 3rem 1.5rem;
+}
+
+.slider h3{
+  padding-bottom: 1.5rem;
+}
+
+/*CTA*/
+
+.cta{
+  position: relative;
+  isolation: isolate;
+}
+
+.cta::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('images/bg-simplify-section-desktop.svg');
+  background-repeat: no-repeat;
+  opacity: 2;
+  background-position: 10rem -6rem;
+}
+
+/*Footer*/
+
+.foot{
+  display: flex;
+  background-color: var(--Bright-Red);
+}
+
+.footerhead{
+  color: var(--Vary-Light-Gray);
+  font-size: var(--font-size-big);
+  font-weight: 600;
+}
+
+/**/
+
+.center{
+  align-items: center;
 }
 
 li a {
@@ -170,62 +334,6 @@ ul {
   list-style: none;
 }
 
-.flows :not(:first-child){
-  margin-block: 2rem 1rem;
-}
-
-.innerpar{
-  font-size: var(--font-size-class);
-  color: var(--Dark-Grayish-Blue);
-  line-height: 1.6;
-}
-
-.innerparsdiv{
-  padding-block: .8rem 2rem;
-  align-items: center;
-}
-
-.pars{
-  font-size: var(--font-size-class);
-  color: var(--Dark-Grayish-Blue);
-  line-height: 1.8;
-}
-
-.foot{
-  display: flex;
-  background-color: var(--Bright-Red);
-}
-
-.footerhead{
-  color: var(--Vary-Light-Gray);
-  font-size: var(--font-size-big);
-  font-weight: 600;
-}
-
-.btn{
-  background-color: var(--Bright-Red);
-  color: var(--Vary-Light-Gray);
-  border: none;
-  border-radius: 30px;
-  padding-block: .6rem;
-  padding-inline: 1.5rem;
-  font-size: var(--font-size-min);
-  cursor: pointer;
-}
-
-.btn[data-type="inverted"]{
-  color: var(--Bright-Red);
-  background-color: var(--Vary-Light-Gray);
-}
-
-.carousel{
-  text-align: -webkit-center;
-}
-
-.center{
-  align-items: center;
-}
-
 footer{
   background-color: var(--Very-Dark-Blue);
   color: var(--Vary-Light-Gray);
@@ -244,84 +352,6 @@ form{
 .copyright{
   font-size: var(--font-size-little);
   color: var(--Dark-Grayish-Blue);
-}
-
-.slider {
-  display: flex;
-  gap: 1rem;
-}
-
-.slider > * {
-  flex: 0 0 auto;
-  width: 500px;
-}
-
-.slider img{
-  width: 5rem;
-  padding-block: 3rem 1.5rem;
-}
-
-.slider h3{
-  padding-bottom: 1.5rem;
-}
-
-.carouselcontent{
-  padding: 2rem 3rem;
-  background-color: var(--Vary-Light-Gray);
-}
-
-.parscarousel{
-  font-size: var(--font-size-class);
-  color: var(--Dark-Grayish-Blue);
-  margin-inline: auto;
-  line-height: 1.8;
-}
-
-.cta{
-  position: relative;
-  isolation: isolate;
-}
-
-.cta::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: url('images/bg-simplify-section-desktop.svg');
-  background-repeat: no-repeat;
-  opacity: 2;
-  background-position: 10rem -6rem;
-}
-
-.numbers{
-  counter-reset: count;
-  margin-inline: auto;
-  width: fit-content;
-}
-
-.numbers li{
-  counter-increment: count;
-}
-
-.numbers div::before{
-  content: "0" counter(count);
-  background-color: var(--Bright-Red);
-  color: var(--Vary-Light-Gray);
-  font-weight: bold;
-  padding-block: .5rem;
-  padding-inline: 1.5rem;
-  border-radius: 100vw;
-}
-
-.numbers div{
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  column-gap: 1.5rem;
-}
-
-.columns-wrapper-nav{
-  columns: 2;
-  gap: min(15vw, 4rem);
 }
 
 .feet-nav li{
@@ -352,9 +382,16 @@ form{
   fill: var(--Bright-Red);
 }
 
+/*Warpers*/
+
 .columns-wrapper-form{
   display: grid;
   align-content: space-between;
+}
+
+.columns-wrapper-nav{
+  columns: 2;
+  gap: min(15vw, 4rem);
 }
 
 @media (min-width: 650px){
