@@ -17,10 +17,14 @@
     --font-size-min: 13px;
     --font-size-little: 12px;
 
-
     --light-weight: 400;
     --normal-weight: 500;
     --strong-weight: 700;
+
+    --normal-padding: 1rem;
+    --padding-15rem: 1.5rem;
+    --padding-2rem: 2rem;
+    --padding-3rem: 3rem;
 }
 
 /* Box sizing rules */
@@ -100,7 +104,7 @@ body{
 .container{
   width: min(1100px , 100%);
   margin-inline: auto;
-  padding: 1.5rem;
+  padding: var(--padding-2rem);
 }
 
 .columns{
@@ -156,7 +160,7 @@ body{
   border: none;
   border-radius: 30px;
   padding-block: .6rem;
-  padding-inline: 1.5rem;
+  padding-inline: var(--padding-15rem);
   font-size: var(--font-size-min);
   cursor: pointer;
 }
@@ -186,10 +190,6 @@ body{
   margin-block: 2rem 1rem;
 }
 
-.tablet-imgs{
-
-}
-
 /*Number list*/
 
 .innerpar{
@@ -199,7 +199,7 @@ body{
 }
 
 .innerparsdiv{
-  padding-block: .8rem 2rem;
+  padding-block: .8rem var(--padding-2rem);
   align-items: center;
 }
 
@@ -219,14 +219,14 @@ body{
   color: var(--Vary-Light-Gray);
   font-weight: bold;
   padding-block: .5rem;
-  padding-inline: 1.5rem;
+  padding-inline: var(--padding-15rem);
   border-radius: 100vw;
 }
 
 .numbers div{
   display: grid;
   grid-template-columns: min-content 1fr;
-  column-gap: 1.5rem;
+  column-gap: var(--padding-15rem);
 }
 
 /*Carousel*/
@@ -236,16 +236,16 @@ body{
 }
 
 .carousel, footer{
-  padding-block: 3rem;
+  padding-block: var(--padding-3rem) 7rem;
 }
 
 .carouselcontent{
-  padding: 2rem 3rem;
+  padding: var(--padding-2rem) .5rem;
   background-color: var(--Vary-Light-Gray);
 }
 
 .parscarousel{
-  font-size: var(--font-size-class);
+  font-size: var(--font-size-mid);
   color: var(--Dark-Grayish-Blue);
   margin-inline: auto;
   line-height: 1.8;
@@ -263,11 +263,15 @@ body{
 
 .slider img{
   width: 5rem;
-  padding-block: 3rem 1.5rem;
+  padding-block: var(--padding-3rem) var(--padding-15rem);
 }
 
 .slider h3{
-  padding-bottom: 1.5rem;
+  padding-bottom: var(--padding-15rem);
+}
+
+.a11y-slider-container{
+  padding: var(--padding-2rem);
 }
 
 /*CTA*/
@@ -320,7 +324,7 @@ h1 {
 }
 
 h2{
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-toobig);
   font-weight: bold;
   color: var(--Dark-Blue);
 }
@@ -352,6 +356,7 @@ form{
 .copyright{
   font-size: var(--font-size-little);
   color: var(--Dark-Grayish-Blue);
+  text-align: center;
 }
 
 .feet-nav li{
@@ -370,6 +375,7 @@ form{
 .socials{
   display: flex;
   justify-items: center;
+  width: 90%;
 }
 
 .icon{
@@ -396,7 +402,7 @@ form{
 
 @media (min-width: 650px){
   section{
-    padding-block: 2rem;
+    padding-block: var(--padding-2rem);
   }
 
   h1 {
@@ -404,7 +410,7 @@ form{
   }
 
   .pars{
-    max-width: min(650px, 60%);
+    max-width: min(650px, 68%);
   }
 
   .columns{
@@ -435,12 +441,38 @@ form{
 
   .numbers p{
     grid-column: 2/-1;
-    padding-block: 1rem;
+    padding-block: var(--normal-padding);
   }
 
   .copyright{
     margin-left: auto;
   }
+
+  .tablet-imgs::after{
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 120%;
+  aspect-ratio: 1;
+  background-position: bottom right;
+  z-index: -1;
+  background-image: url('images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+}
+
+.tablet-img-bottom::before{
+  content: '';
+  position: absolute;
+  top: 110%;
+  left: -40%;
+  width: 100%;
+  aspect-ratio: 1;
+  z-index: -1;
+  background-image: url('images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
 }
 
 @media (max-width: 650px){
@@ -469,8 +501,8 @@ form{
     display: none;
     position: fixed;
     inset: 7rem var(--font-size-min) auto;
-    padding-block: 2rem;
-    background-color: var(--Very-Pale-Red);
+    padding-block: var(--padding-2rem);
+    background-color: var(--Vary-Light-Gray);
     border-radius: 5px;
   }
 
@@ -483,7 +515,7 @@ form{
   }
 
   .btndivs{
-    padding-block: 2rem;
+    padding-block: var(--padding-2rem);
   }
 
   .btn-flex{
@@ -528,32 +560,40 @@ form{
     display: grid;
     place-content: center;
     gap: 2.5rem;
-    grid-template-areas: 
+    grid-template-areas:
+      "logo"
       "search"
       "nav"
       "social"
+      "copyright"
     ;
+    place-items: center;
   }
 
   .columns-wrapper-nav{
-    grid-area: nav;
+    grid-area: search;
+  }
+
+  .columns-wrapper-logo{
+    grid-area: social;
   }
 
   .columns-wrapper-form{
-    grid-area: search;
+    grid-area: logo;
     text-align: center;
   }
 
   .columns-wrapper-social{
-    display: flex;   
-    flex-direction: column-reverse;
-    gap: 2.5rem;
-    grid-area: social;
+    grid-area: nav;
+  }
+
+  .columns-wrapper-copyright{
+    grid-area: copyright;
   }
 
   .numbers p{
     grid-column: 1/-1;
-    padding-block: 1rem;
+    padding-block: var(--normal-padding);
   }
 
   .slider > * {
@@ -569,7 +609,7 @@ form{
   .a11y-slider-dots{
     display: flex;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: var(--padding-3rem);
   }
 
   .a11y-slider-dots li button.active{
