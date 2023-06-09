@@ -97,6 +97,7 @@ select {
 
 body{
   font-family: 'Be Vietnam Pro', sans-serif;
+  overflow-x: hidden;
 }
 
 /*Container and columns*/
@@ -271,7 +272,7 @@ body{
 }
 
 .a11y-slider-container{
-  padding: var(--padding-2rem);
+  padding-block: var(--padding-2rem);
 }
 
 /*CTA*/
@@ -346,7 +347,7 @@ footer{
 input{
   border-radius: 30px;
   padding-block: .35rem;
-  padding-inline: 1.75rem;
+  padding-inline: 1.2rem;
 }
 
 form{
@@ -375,12 +376,13 @@ form{
 .socials{
   display: flex;
   justify-items: center;
+  gap: .3rem;
   width: 90%;
 }
 
 .icon{
   aspect-ratio: 1;
-  max-width: 60%;
+  max-width: 70%;
   fill: var(--Vary-Light-Gray);
 }
 
@@ -397,7 +399,6 @@ form{
 
 .columns-wrapper-nav{
   columns: 2;
-  gap: min(15vw, 4rem);
 }
 
 @media (min-width: 650px){
@@ -473,6 +474,22 @@ form{
   background-repeat: no-repeat;
   background-position: bottom left;
 }
+
+.columns-wrapper {
+  grid-template-areas: 
+    'logo nav search'
+    'social nav copyright'
+  ;
+}
+
+.columns-wrapper-search {
+  grid-area: search;
+}
+
+.columns-wrapper-copyright {
+  grid-area: copyright;
+}
+
 }
 
 @media (max-width: 650px){
@@ -495,15 +512,28 @@ form{
 
   .mobile-toggle{
     display: block;
+    background: transparent;
+    border: 0;
+    z-index: 1;
+    cursor: pointer;
   }
 
   .middle{
     display: none;
     position: fixed;
-    inset: 7rem var(--font-size-min) auto;
+    inset: 8rem 2rem auto;
     padding-block: var(--padding-2rem);
     background-color: var(--Vary-Light-Gray);
     border-radius: 5px;
+    z-index: 1;
+    box-shadow: 0 0 0.75rem rgba(134, 34, 34, 0.15);
+  }
+
+  .heads[data-overlay]::after{
+    position: fixed;
+    inset: 0;
+    content: '';
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
   }
 
   .lista{
@@ -529,6 +559,10 @@ form{
 
   .footerhead{
     font-size: var(--font-size-medium);
+  }
+
+  .columns-wrapper-nav{
+    gap: min(15vw, 4rem);
   }
 
   footer{
@@ -578,7 +612,7 @@ form{
     grid-area: social;
   }
 
-  .columns-wrapper-form{
+  .columns-wrapper-search{
     grid-area: logo;
     text-align: center;
   }
@@ -633,5 +667,9 @@ form{
     width: 70%;
     height: 70%;
     border-radius: 100%;
+  }
+
+  .a11y-slider-container{
+    padding: var(--padding-2rem);
   }
 }
