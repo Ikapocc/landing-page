@@ -241,7 +241,7 @@ body{
 }
 
 footer{
-  padding-block: var(--padding-3rem) var(--normal-padding);
+  padding-block: var(--padding-3rem) var(--padding-15rem);
 }
 
 .carouselcontent{
