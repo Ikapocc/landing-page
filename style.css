@@ -9,7 +9,7 @@
     --Vary-Light-Gray: hsl(0, 0%, 98%);
 
     --font-size-toobig: 48px;
-    --font-size-big: 40px;
+    --font-size-big: 35px;
     --font-size-medium: 38px;
     --font-size-def: 16px;
     --font-size-class: 15px;
@@ -115,7 +115,7 @@ body{
 /*Header classes*/
 
 .heads{
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .container-flex{
@@ -241,7 +241,7 @@ body{
 }
 
 footer{
-  padding-block: var(--padding-3rem) var(--padding-15rem);
+  padding-block: var(--padding-3rem) var(--normal-padding);
 }
 
 .carouselcontent{
@@ -326,10 +326,11 @@ h1, h2, .footerhead{
 
 h1 {
   color: var(--Dark-Blue);
+  font-weight: 600;
 }
 
 h2{
-  font-size: var(--font-size-toobig);
+  font-size: var(--font-size-big);
   font-weight: bold;
   color: var(--Dark-Blue);
 }
