@@ -236,8 +236,12 @@ body{
   text-align: -webkit-center;
 }
 
-.carousel, footer{
+.carousel{
   padding-block: var(--padding-3rem) 7rem;
+}
+
+footer{
+  padding-block: var(--padding-3rem) var(--normal-padding);
 }
 
 .carouselcontent{
